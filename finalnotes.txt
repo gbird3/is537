@@ -1,0 +1,12 @@
+bit shifting
+bit masking
+
+Get the color integers out of an integer that is a combined hex.
+
+No string manipulation
+
+You enter in the hex code. As soon as that code hits your view, you switch it to a base10 integer
+you work with that integer through everything
+when you bit it into your results array, you switch it back.
+
+Take the decimal and turn it into the tuple

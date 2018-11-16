@@ -1,0 +1,3 @@
+Django==1.11.7
+django-mako-plus==4.4.5
+Mako==1.0.7

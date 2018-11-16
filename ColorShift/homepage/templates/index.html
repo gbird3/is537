@@ -1,0 +1,54 @@
+## this is the skeleton of all pages on in this app - it defines the basic html tags
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <head>
+
+        <title>homepage</title>
+        <script src="${ STATIC_URL }homepage/media/jquery-3.2.1.min.js"></script>
+        <script src="${ STATIC_URL }homepage/media/popper.js"></script>
+        <script src="${ STATIC_URL }homepage/media/tooltip.js"></script>
+        <script src="${ STATIC_URL }homepage/media/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="${ STATIC_URL }homepage/media/bootstrap.min.css">
+
+        ## render the static file links with the same name as this template
+        <script src="/django_mako_plus/dmp-common.min.js"></script>
+        ${ django_mako_plus.links(self) }
+
+    </head>
+    <body>
+        <header>
+            <h1>Color Shift<h1>
+        </header>
+        <main>
+            <div>
+                <form id="form" method="POST" class="form-inline">
+                    ${ form }
+                    <button id="submit_button" type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            
+            <h2>Unsorted</h2>
+            <div id="color_tile_container">
+                %for i, tile in enumerate(color_tiles):
+                    %if i % 7 == 0:
+                        <br/>
+                    %endif
+                    ${ tile.render() }
+                %endfor
+            </div>
+
+            <h2>Sorted</h2>
+            <div id="color_tile_container">
+                %for i, tile in enumerate(color_tiles2):
+                    %if i % 7 == 0:
+                        <br/>
+                    %endif
+                    ${ tile.render() }
+                %endfor
+            </div>
+
+        </main>
+    </body>
+</html>
+
